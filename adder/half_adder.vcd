@@ -1,0 +1,48 @@
+$date
+	Mon Oct 27 09:08:34 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module half_adder_sim $end
+$var wire 1 ! sum $end
+$var wire 1 " carry $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$scope module a1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 " carry $end
+$var wire 1 ! sum $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+x$
+x#
+x"
+x!
+$end
+#5
+0"
+0!
+0$
+0#
+#10
+1!
+1$
+#15
+0$
+1#
+#20
+1"
+0!
+1$
+#25

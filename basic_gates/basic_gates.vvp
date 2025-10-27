@@ -1,0 +1,81 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002fcd81ebde0 .scope module, "basic_gates_tb" "basic_gates_tb" 2 16;
+ .timescale 0 0;
+v000002fcd8281d80_0 .var "a", 0 0;
+v000002fcd8282460_0 .net "and_out", 0 0, L_000002fcd8236bd0;  1 drivers
+v000002fcd82826e0_0 .var "b", 0 0;
+v000002fcd8281ba0_0 .net "nand_out", 0 0, L_000002fcd81e6740;  1 drivers
+v000002fcd82819c0_0 .net "nor_out", 0 0, L_000002fcd8282f90;  1 drivers
+v000002fcd8281ec0_0 .net "not_out", 0 0, L_000002fcd81e6660;  1 drivers
+v000002fcd8282780_0 .net "or_out", 0 0, L_000002fcd8225580;  1 drivers
+v000002fcd8281880_0 .net "xor_out", 0 0, L_000002fcd8282ac0;  1 drivers
+S_000002fcd8224e80 .scope module, "uut" "basic_gates" 2 21, 2 2 0, S_000002fcd81ebde0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "and_out";
+    .port_info 3 /OUTPUT 1 "nand_out";
+    .port_info 4 /OUTPUT 1 "or_out";
+    .port_info 5 /OUTPUT 1 "nor_out";
+    .port_info 6 /OUTPUT 1 "not_out";
+    .port_info 7 /OUTPUT 1 "xor_out";
+L_000002fcd8236bd0 .functor AND 1, v000002fcd8281d80_0, v000002fcd82826e0_0, C4<1>, C4<1>;
+L_000002fcd8225580 .functor OR 1, v000002fcd8281d80_0, v000002fcd82826e0_0, C4<0>, C4<0>;
+L_000002fcd81e6660 .functor NOT 1, v000002fcd8281d80_0, C4<0>, C4<0>, C4<0>;
+L_000002fcd81e66d0 .functor AND 1, v000002fcd8281d80_0, v000002fcd82826e0_0, C4<1>, C4<1>;
+L_000002fcd81e6740 .functor NOT 1, L_000002fcd81e66d0, C4<0>, C4<0>, C4<0>;
+L_000002fcd81e67b0 .functor OR 1, v000002fcd8281d80_0, v000002fcd82826e0_0, C4<0>, C4<0>;
+L_000002fcd8282f90 .functor NOT 1, L_000002fcd81e67b0, C4<0>, C4<0>, C4<0>;
+L_000002fcd8282ac0 .functor XOR 1, v000002fcd8281d80_0, v000002fcd82826e0_0, C4<0>, C4<0>;
+v000002fcd8225260_0 .net *"_ivl_10", 0 0, L_000002fcd81e67b0;  1 drivers
+v000002fcd8234480_0 .net *"_ivl_6", 0 0, L_000002fcd81e66d0;  1 drivers
+v000002fcd8234520_0 .net "a", 0 0, v000002fcd8281d80_0;  1 drivers
+v000002fcd82345c0_0 .net "and_out", 0 0, L_000002fcd8236bd0;  alias, 1 drivers
+v000002fcd8225300_0 .net "b", 0 0, v000002fcd82826e0_0;  1 drivers
+v000002fcd82253a0_0 .net "nand_out", 0 0, L_000002fcd81e6740;  alias, 1 drivers
+v000002fcd8225440_0 .net "nor_out", 0 0, L_000002fcd8282f90;  alias, 1 drivers
+v000002fcd82254e0_0 .net "not_out", 0 0, L_000002fcd81e6660;  alias, 1 drivers
+v000002fcd81e65c0_0 .net "or_out", 0 0, L_000002fcd8225580;  alias, 1 drivers
+v000002fcd82823c0_0 .net "xor_out", 0 0, L_000002fcd8282ac0;  alias, 1 drivers
+    .scope S_000002fcd81ebde0;
+T_0 ;
+    %vpi_call 2 33 "$dumpfile", "basic_gates.vcd" {0 0 0};
+    %vpi_call 2 34 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002fcd81ebde0 {0 0 0};
+    %vpi_call 2 37 "$display", "A B | AND OR NOT NAND NOR XOR" {0 0 0};
+    %vpi_call 2 40 "$monitor", "%b %b |  %b   %b   %b    %b    %b    %b", v000002fcd8281d80_0, v000002fcd82826e0_0, v000002fcd8282460_0, v000002fcd8282780_0, v000002fcd8281ec0_0, v000002fcd8281ba0_0, v000002fcd82819c0_0, v000002fcd8281880_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002fcd8281d80_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002fcd82826e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002fcd8281d80_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002fcd82826e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002fcd8281d80_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002fcd82826e0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002fcd8281d80_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002fcd82826e0_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 49 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "basic_gates.v";

@@ -1,0 +1,166 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001bfe5bd8770 .scope module, "sisotb" "sisotb" 2 25;
+ .timescale 0 0;
+v000001bfe5c32730_0 .var "clk", 0 0;
+v000001bfe5c324b0_0 .var "clr", 0 0;
+v000001bfe5c32af0_0 .var "d", 0 0;
+v000001bfe5c31dd0_0 .var "pre", 0 0;
+v000001bfe5c32b90_0 .net "q", 3 0, L_000001bfe5c315b0;  1 drivers
+v000001bfe5c32c30_0 .net "qbar", 3 0, L_000001bfe5c31650;  1 drivers
+S_000001bfe5bd8900 .scope module, "uut" "siso" 2 29, 2 13 0, S_000001bfe5bd8770;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clk";
+    .port_info 2 /OUTPUT 4 "q";
+    .port_info 3 /OUTPUT 4 "qbar";
+    .port_info 4 /INPUT 1 "pre";
+    .port_info 5 /INPUT 1 "clr";
+v000001bfe5c32550_0 .net "clk", 0 0, v000001bfe5c32730_0;  1 drivers
+v000001bfe5c322d0_0 .net "clr", 0 0, v000001bfe5c324b0_0;  1 drivers
+v000001bfe5c32a50_0 .net "d", 0 0, v000001bfe5c32af0_0;  1 drivers
+v000001bfe5c329b0_0 .net "pre", 0 0, v000001bfe5c31dd0_0;  1 drivers
+v000001bfe5c32410_0 .net "q", 3 0, L_000001bfe5c315b0;  alias, 1 drivers
+v000001bfe5c32f50_0 .net "qbar", 3 0, L_000001bfe5c31650;  alias, 1 drivers
+L_000001bfe5c325f0 .part L_000001bfe5c315b0, 0, 1;
+L_000001bfe5c32e10 .part L_000001bfe5c315b0, 1, 1;
+L_000001bfe5c31510 .part L_000001bfe5c315b0, 2, 1;
+L_000001bfe5c315b0 .concat8 [ 1 1 1 1], L_000001bfe5bd0240, L_000001bfe5bcf600, L_000001bfe5bd0080, L_000001bfe5bd02b0;
+L_000001bfe5c31650 .concat8 [ 1 1 1 1], L_000001bfe5bcfec0, L_000001bfe5bcf8a0, L_000001bfe5bcf7c0, L_000001bfe5bcf910;
+S_000001bfe5bd6660 .scope module, "d1" "d" 2 19, 2 1 0, S_000001bfe5bd8900;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clk";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "qbar";
+    .port_info 4 /INPUT 1 "pre";
+    .port_info 5 /INPUT 1 "clr";
+L_000001bfe5bcfd00 .functor NAND 1, v000001bfe5c32af0_0, v000001bfe5c32730_0, C4<1>, C4<1>;
+L_000001bfe5bcf830 .functor NAND 1, v000001bfe5c32730_0, L_000001bfe5bcfc20, C4<1>, C4<1>;
+L_000001bfe5bcfc20 .functor NOT 1, v000001bfe5c32af0_0, C4<0>, C4<0>, C4<0>;
+L_000001bfe5bd0240 .functor NAND 1, L_000001bfe5bcfd00, L_000001bfe5bcfec0, v000001bfe5c31dd0_0, C4<1>;
+L_000001bfe5bcfec0 .functor NAND 1, L_000001bfe5bcf830, L_000001bfe5bd0240, v000001bfe5c324b0_0, C4<1>;
+v000001bfe5bc8bd0_0 .net *"_ivl_0", 0 0, L_000001bfe5bcfc20;  1 drivers
+v000001bfe5bc9210_0 .net "clk", 0 0, v000001bfe5c32730_0;  alias, 1 drivers
+v000001bfe5bc8f90_0 .net "clr", 0 0, v000001bfe5c324b0_0;  alias, 1 drivers
+v000001bfe5bc8c70_0 .net "d", 0 0, v000001bfe5c32af0_0;  alias, 1 drivers
+v000001bfe5bc9030_0 .net "pre", 0 0, v000001bfe5c31dd0_0;  alias, 1 drivers
+v000001bfe5bc90d0_0 .net "q", 0 0, L_000001bfe5bd0240;  1 drivers
+v000001bfe5bc8db0_0 .net "qbar", 0 0, L_000001bfe5bcfec0;  1 drivers
+v000001bfe5bc8d10_0 .net "w1", 0 0, L_000001bfe5bcfd00;  1 drivers
+v000001bfe5bc86d0_0 .net "w2", 0 0, L_000001bfe5bcf830;  1 drivers
+S_000001bfe5bd67f0 .scope module, "d2" "d" 2 20, 2 1 0, S_000001bfe5bd8900;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clk";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "qbar";
+    .port_info 4 /INPUT 1 "pre";
+    .port_info 5 /INPUT 1 "clr";
+L_000001bfe5bcf670 .functor NAND 1, L_000001bfe5c325f0, v000001bfe5c32730_0, C4<1>, C4<1>;
+L_000001bfe5bd0320 .functor NAND 1, v000001bfe5c32730_0, L_000001bfe5bcf6e0, C4<1>, C4<1>;
+L_000001bfe5bcf6e0 .functor NOT 1, L_000001bfe5c325f0, C4<0>, C4<0>, C4<0>;
+L_000001bfe5bcf600 .functor NAND 1, L_000001bfe5bcf670, L_000001bfe5bcf8a0, v000001bfe5c31dd0_0, C4<1>;
+L_000001bfe5bcf8a0 .functor NAND 1, L_000001bfe5bd0320, L_000001bfe5bcf600, v000001bfe5c324b0_0, C4<1>;
+v000001bfe5bc88b0_0 .net *"_ivl_0", 0 0, L_000001bfe5bcf6e0;  1 drivers
+v000001bfe5bc92b0_0 .net "clk", 0 0, v000001bfe5c32730_0;  alias, 1 drivers
+v000001bfe5bc9350_0 .net "clr", 0 0, v000001bfe5c324b0_0;  alias, 1 drivers
+v000001bfe5bc8450_0 .net "d", 0 0, L_000001bfe5c325f0;  1 drivers
+v000001bfe5bc8770_0 .net "pre", 0 0, v000001bfe5c31dd0_0;  alias, 1 drivers
+v000001bfe5bc84f0_0 .net "q", 0 0, L_000001bfe5bcf600;  1 drivers
+v000001bfe5c32370_0 .net "qbar", 0 0, L_000001bfe5bcf8a0;  1 drivers
+v000001bfe5c32d70_0 .net "w1", 0 0, L_000001bfe5bcf670;  1 drivers
+v000001bfe5c32190_0 .net "w2", 0 0, L_000001bfe5bd0320;  1 drivers
+S_000001bfe5bd3cd0 .scope module, "d3" "d" 2 21, 2 1 0, S_000001bfe5bd8900;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clk";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "qbar";
+    .port_info 4 /INPUT 1 "pre";
+    .port_info 5 /INPUT 1 "clr";
+L_000001bfe5bcffa0 .functor NAND 1, L_000001bfe5c32e10, v000001bfe5c32730_0, C4<1>, C4<1>;
+L_000001bfe5bcf9f0 .functor NAND 1, v000001bfe5c32730_0, L_000001bfe5bcf750, C4<1>, C4<1>;
+L_000001bfe5bcf750 .functor NOT 1, L_000001bfe5c32e10, C4<0>, C4<0>, C4<0>;
+L_000001bfe5bd0080 .functor NAND 1, L_000001bfe5bcffa0, L_000001bfe5bcf7c0, v000001bfe5c31dd0_0, C4<1>;
+L_000001bfe5bcf7c0 .functor NAND 1, L_000001bfe5bcf9f0, L_000001bfe5bd0080, v000001bfe5c324b0_0, C4<1>;
+v000001bfe5c313d0_0 .net *"_ivl_0", 0 0, L_000001bfe5bcf750;  1 drivers
+v000001bfe5c31bf0_0 .net "clk", 0 0, v000001bfe5c32730_0;  alias, 1 drivers
+v000001bfe5c32eb0_0 .net "clr", 0 0, v000001bfe5c324b0_0;  alias, 1 drivers
+v000001bfe5c31470_0 .net "d", 0 0, L_000001bfe5c32e10;  1 drivers
+v000001bfe5c31290_0 .net "pre", 0 0, v000001bfe5c31dd0_0;  alias, 1 drivers
+v000001bfe5c31330_0 .net "q", 0 0, L_000001bfe5bd0080;  1 drivers
+v000001bfe5c31c90_0 .net "qbar", 0 0, L_000001bfe5bcf7c0;  1 drivers
+v000001bfe5c31b50_0 .net "w1", 0 0, L_000001bfe5bcffa0;  1 drivers
+v000001bfe5c31830_0 .net "w2", 0 0, L_000001bfe5bcf9f0;  1 drivers
+S_000001bfe5bd3e60 .scope module, "d4" "d" 2 22, 2 1 0, S_000001bfe5bd8900;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clk";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "qbar";
+    .port_info 4 /INPUT 1 "pre";
+    .port_info 5 /INPUT 1 "clr";
+L_000001bfe5bd01d0 .functor NAND 1, L_000001bfe5c31510, v000001bfe5c32730_0, C4<1>, C4<1>;
+L_000001bfe5bd0010 .functor NAND 1, v000001bfe5c32730_0, L_000001bfe5bcfa60, C4<1>, C4<1>;
+L_000001bfe5bcfa60 .functor NOT 1, L_000001bfe5c31510, C4<0>, C4<0>, C4<0>;
+L_000001bfe5bd02b0 .functor NAND 1, L_000001bfe5bd01d0, L_000001bfe5bcf910, v000001bfe5c31dd0_0, C4<1>;
+L_000001bfe5bcf910 .functor NAND 1, L_000001bfe5bd0010, L_000001bfe5bd02b0, v000001bfe5c324b0_0, C4<1>;
+v000001bfe5c327d0_0 .net *"_ivl_0", 0 0, L_000001bfe5bcfa60;  1 drivers
+v000001bfe5c32230_0 .net "clk", 0 0, v000001bfe5c32730_0;  alias, 1 drivers
+v000001bfe5c32910_0 .net "clr", 0 0, v000001bfe5c324b0_0;  alias, 1 drivers
+v000001bfe5c31d30_0 .net "d", 0 0, L_000001bfe5c31510;  1 drivers
+v000001bfe5c31ab0_0 .net "pre", 0 0, v000001bfe5c31dd0_0;  alias, 1 drivers
+v000001bfe5c31150_0 .net "q", 0 0, L_000001bfe5bd02b0;  1 drivers
+v000001bfe5c320f0_0 .net "qbar", 0 0, L_000001bfe5bcf910;  1 drivers
+v000001bfe5c31fb0_0 .net "w1", 0 0, L_000001bfe5bd01d0;  1 drivers
+v000001bfe5c32690_0 .net "w2", 0 0, L_000001bfe5bd0010;  1 drivers
+    .scope S_000001bfe5bd8770;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bfe5c32730_0, 0, 1;
+T_0.0 ;
+    %delay 5, 0;
+    %load/vec4 v000001bfe5c32730_0;
+    %inv;
+    %store/vec4 v000001bfe5c32730_0, 0, 1;
+    %jmp T_0.0;
+    %end;
+    .thread T_0;
+    .scope S_000001bfe5bd8770;
+T_1 ;
+    %vpi_call 2 35 "$monitor", $time, " d=%b q=%b", v000001bfe5c32af0_0, v000001bfe5c32b90_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bfe5c31dd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bfe5c324b0_0, 0, 1;
+    %delay 11, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bfe5c324b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bfe5c32af0_0, 0, 1;
+    %delay 11, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bfe5c32af0_0, 0, 1;
+    %delay 11, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001bfe5c32af0_0, 0, 1;
+    %delay 11, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001bfe5c32af0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 43 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "siso.v";
